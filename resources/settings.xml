@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Stream">
+		<setting type="lsep" label="Stream"/>
+        <setting id="cleanup" type="action" label="Clear JioTV Cache" action="RunPlugin(plugin://plugin.video.jiotv/resources/lib/main/cleanup/)" option="close"/>
+		<setting type="lsep" label="Stream Resolution Settings"/>
+        <setting id="sstype" type="select" label="Stream Selection Type :" values="Adaptive|Ask-Quality|Manual-OSD|Fixed-Res" default="Adaptive"/>
+        <setting id="quality" type="select" label="Adaptive Stream Quality Level :" values="Best|High|Medium+|Medium|Low|Lower|Lowest" enable="eq(-1,0)" visible="eq(4,false)" subsetting="true" default="Best" />
+        <setting id="resmax" type="select" label="[COLOR teal]Maximum stream resolution for non-protected videos :[/COLOR]" values="4K|1440p|2K|1080p|720p|640p|480p" visible="!eq(-2,2)" default="4K"/>
+        <setting id="ressecmax" type="select" label="[COLOR teal]Maximum stream resolution for DRM-protected videos :[/COLOR]" values="4K|1440p|2K|1080p|720p|640p|480p" visible="!eq(-3,2)" default="4K"/>
+    </category>
+    <category label="Channels">
+		<setting type="lsep" label="Channels List"/>
+        <setting id="hdsdch" type="enum" label="Channels Type :" values="All Channels (HD and SD)|HD Channels Only|SD Channels Only"/>
+        <setting id="clmn" type="bool" label="Category + Language in Menu"/>
+        <setting id="numaddlist" type="bool" label="Number JioTV Add-on Channels List"/>
+        <setting id="filteraddlist" type="bool" label="Filter JioTV Add-on Channels"/>
+        <setting id="filterplaylist" type="bool" label="Filter IPTV Simple Client Channels"/>
+        <setting id="chepg" type="bool" label="Show Channels Program Guide"/>
+        <setting id="m3ufolder" type="folder" label="M3U Playlist Folder Path :"/>
+        <setting id="m3ufile" type="text" label="M3U Playlist File Name :"/>
+        <setting id="m3ugen" type="action" label="Update M3U Playlist" action="RunPlugin(plugin://plugin.video.jiotv/resources/lib/main/m3ugen/)"/>
+        <setting id="chlogo" type="bool" label="Show Channels Logo"/>
+        <setting id="logosize" type="slider" range = "0, 94, 376" option="int" label="Channels Logo Quality (Pixels)" default="94" subsetting="true" enable="eq(-1,true)"/>
+    </category>
+    <category label="API / URL">
+        <setting id="editapi" type="bool" label="[B][COLOR orange]Enable editing the APIs / URLs below[/COLOR][/B]" default="false"/>
+        <setting type="lsep" label="Channels List :"/>
+        <setting id="channelssource" type="text" enable="eq(-2,true)"/>
+        <setting type="lsep" label="Channel URL :"/>
+        <setting id="channelurl" type="text" enable="eq(-4,true)"/>
+        <setting id="extrach" type="bool" label="Enable Extra Channels" enable="eq(-5,true)" subsetting="true"/>
+        <setting type="lsep" label="Catchup :"/>
+        <setting id="catchupsource" type="text" enable="eq(-7,true)"/>
+        <setting type="lsep" label="Featured :"/>
+        <setting id="featuredsource" type="text" enable="eq(-9,true)"/>
+        <setting type="lsep" label="Electronic Program Guide (EPG) :"/>
+        <setting id="epgsource" type="text" enable="eq(-11,true)"/>
+    </category>
+    <category label="Languages">
+		<setting type="lsep" label="Languages Selection"/>
+        <setting id="Hindi" type="bool" label="Hindi" enable="eq(8,true)|eq(9,true)"/>
+        <setting id="Marathi" type="bool" label="Marathi" enable="eq(7,true)|eq(8,true)"/>
+        <setting id="Punjabi" type="bool" label="Punjabi" enable="eq(6,true)|eq(7,true)"/>
+        <setting id="Urdu" type="bool" label="Urdu" enable="eq(5,true)|eq(6,true)"/>
+        <setting id="Bengali" type="bool" label="Bengali" enable="eq(4,true)|eq(5,true)"/>
+       <setting id="English" type="bool" label="English" enable="eq(3,true)|eq(4,true)"/>
+        <setting id="Malayalam" type="bool" label="Malayalam" enable="eq(2,true)|eq(3,true)"/>
+        <setting id="Tamil" type="bool" label="Tamil" enable="eq(1,true)|eq(2,true)"/>
+        <setting id="filteraddlist" type="bool" visible="false"/>
+        <setting id="filterplaylist" type="bool" visible="false"/>
+        <setting id="Gujarati" type="bool" label="Gujarati" enable="eq(-1,true)|eq(-2,true)"/>
+        <setting id="Odia" type="bool" label="Odia" enable="eq(-2,true)|eq(-3,true)"/>
+        <setting id="Telugu" type="bool" label="Telugu" enable="eq(-3,true)|eq(-4,true)"/>
+        <setting id="Bhojpuri" type="bool" label="Bhojpuri" enable="eq(-4,true)|eq(-5,true)"/>
+        <setting id="Kannada" type="bool" label="Kannada" enable="eq(-5,true)|eq(-6,true)"/>
+        <setting id="Assamese" type="bool" label="Assamese" enable="eq(-6,true)|eq(-7,true)"/>
+        <setting id="Nepali" type="bool" label="Nepali" enable="eq(-7,true)|eq(-8,true)"/>
+        <setting id="French" type="bool" label="French" enable="eq(-8,true)|eq(-9,true)"/>
+        <setting id="Other Languages" type="bool" label="Other Languages" enable="eq(-9,true)|eq(-10,true)"/>
+    </category>
+    <category label="Categories">
+		<setting type="lsep" label="Categories Selection"/>
+        <setting id="Entertainment" type="bool" label="Entertainment" enable="eq(6,true)|eq(7,true)"/>
+        <setting id="Movies" type="bool" label="Movies" enable="eq(5,true)|eq(6,true)"/>
+        <setting id="Kids" type="bool" label="Kids" enable="eq(4,true)|eq(5,true)"/>
+        <setting id="Sports" type="bool" label="Sports" enable="eq(3,true)|eq(4,true)"/>
+        <setting id="Lifestyle" type="bool" label="Lifestyle" enable="eq(2,true)|eq(3,true)"/>
+        <setting id="Infotainment" type="bool" label="Infotainment" enable="eq(1,true)|eq(2,true)"/>
+        <setting id="filteraddlist" type="bool" visible="false"/>
+        <setting id="filterplaylist" type="bool" visible="false"/>
+        <setting id="News" type="bool" label="News" enable="eq(-1,true)|eq(-2,true)"/>
+        <setting id="Music" type="bool" label="Music" enable="eq(-2,true)|eq(-3,true)"/>
+        <setting id="Devotional" type="bool" label="Devotional" enable="eq(-3,true)|eq(-4,true)"/>
+        <setting id="Business News" type="bool" label="Business News" enable="eq(-4,true)|eq(-5,true)"/>
+        <setting id="Educational" type="bool" label="Educational" enable="eq(-5,true)|eq(-6,true)"/>
+        <setting id="Shopping" type="bool" label="Shopping" enable="eq(-6,true)|eq(-7,true)"/>
+        <setting id="Other Categories" type="bool" label="Other Categories" enable="eq(-7,true)|eq(-8,true)"/>
+    </category>
+    <category label="Broadcasters">
+		<setting type="lsep" label=" Broadcasters Selection"/>
+        <setting id="General" type="bool" label="General" default="true" enable="eq(18,true)|eq(19,true)" />
+        <setting id="Viacom18 Media" type="bool" label="Viacom18 Media" enable="eq(17,true)|eq(18,true)"/>
+        <setting id="Times Network" type="bool" label="Times Network" enable="eq(16,true)|eq(17,true)"/>
+        <setting id="Zee Entertainment" type="bool" label="Zee Entertainment" enable="eq(15,true)|eq(16,true)"/>
+        <setting id="Sony Pictures Network" type="bool" label="Sony Pictures Network" enable="eq(14,true)|eq(15,true)"/>
+        <setting id="Warner Bros" type="bool" label="Warner Bros" enable="eq(13,true)|eq(14,true)"/>
+        <setting id="TV Today Network" type="bool" label="TV Today Network" enable="eq(12,true)|eq(13,true)"/>
+        <setting id="Sun Network" type="bool" label="Sun Network" enable="eq(11,true)|eq(12,true)"/>
+        <setting id="Discovery Network" type="bool" label="Discovery Network" enable="eq(10,true)|eq(11,true)"/>
+        <setting id="NDTV Network" type="bool" label="NDTV Network" enable="eq(9,true)|eq(10,true)"/>
+        <setting id="9X Media" type="bool" label="9X Media" enable="eq(8,true)|eq(9,true)"/>
+        <setting id="ABP Group" type="bool" label="ABP Group" enable="eq(7,true)|eq(8,true)"/>
+        <setting id="B4U Network" type="bool" label="B4U Network" enable="eq(6,true)|eq(7,true)"/>
+        <setting id="Doordarshan" type="bool" label="Doordarshan" enable="eq(5,true)|eq(6,true)"/>
+        <setting id="Jio Sports Events" type="bool" label="Jio Sports Events" enable="eq(4,true)|eq(5,true)"/>
+        <setting id="Raj Network" type="bool" label="Raj Network" enable="eq(3,true)|eq(4,true)"/>
+        <setting id="Republic Network" type="bool" label="Republic Network" enable="eq(2,true)|eq(3,true)"/>
+        <setting id="Sahara Network" type="bool" label="Sahara Network" enable="eq(1,true)|eq(2,true)"/>
+        <setting id="filteraddlist" type="bool" visible="false"/>
+        <setting id="filterplaylist" type="bool" visible="false"/>
+        <setting id="TravelFoodxp Network" type="bool" label="TravelFoodxp Network" enable="eq(-1,true)|eq(-2,true)"/>
+        <setting id="Fyi Media Group" type="bool" label="Fyi Media Group" enable="eq(-2,true)|eq(-3,true)"/>
+        <setting id="Jio Cinema" type="bool" label="Jio Cinema" enable="eq(-3,true)|eq(-4,true)"/>
+        <setting id="Shemaroo Jio Live" type="bool" label="Shemaroo Jio Live" enable="eq(-4,true)|eq(-5,true)"/>
+        <setting id="BAG Network" type="bool" label="BAG Network" enable="eq(-5,true)|eq(-6,true)"/>
+        <setting id="ETV Network" type="bool" label="ETV Network" enable="eq(-6,true)|eq(-7,true)"/>
+        <setting id="Enterr10 Network" type="bool" label="Enterr10 Network" enable="eq(-7,true)|eq(-8,true)"/>
+        <setting id="Education Network" type="bool" label="Education Network" enable="eq(-8,true)|eq(-9,true)"/>
+        <setting id="PTC Network" type="bool" label="PTC Network" enable="eq(-9,true)|eq(-10,true)"/>
+        <setting id="TV9 Network" type="bool" label="TV9 Network" enable="eq(-10,true)|eq(-11,true)"/>
+        <setting id="Tseries Hungama" type="bool" label="Tseries Hungama" enable="eq(-11,true)|eq(-12,true)"/>
+        <setting id="Merchant Records" type="bool" label="Merchant Records" enable="eq(-12,true)|eq(-13,true)"/>
+        <setting id="Desi Punjabi Bhojpuri" type="bool" label="Desi Punjabi Bhojpuri" enable="eq(-13,true)|eq(-14,true)"/>
+        <setting id="Saregama" type="bool" label="Saregama" enable="eq(-14,true)|eq(-15,true)"/>
+        <setting id="KC Global Media" type="bool" label="KC Global Media" enable="eq(-15,true)|eq(-16,true)"/>
+        <setting id="Wild Earth" type="bool" label="Wild Earth" enable="eq(-16,true)|eq(-17,true)"/>
+        <setting id="Zee News Media" type="bool" label="Zee News Media" enable="eq(-17,true)|eq(-18,true)"/>
+        <setting id="Seven Colors Broadcasting" type="bool" label="Seven Colors Broadcasting" enable="eq(-18,true)|eq(-19,true)"/>
+        <setting id="QYOU Media" type="bool" label="QYOU Media" enable="eq(-19,true)|eq(-20,true)"/>
+        <setting id="PowerKids Entertainment" type="bool" label="PowerKids Entertainment" enable="eq(-20,true)|eq(-21,true)"/>
+        <setting id="Asianet News Network" type="bool" label="Asianet News Network" enable="eq(-21,true)|eq(-22,true)"/>
+        <setting id="Brit Asia TV Network" type="bool" label="Brit Asia TV Network" enable="eq(-22,true)|eq(-23,true)"/>
+        <setting id="ITV News Network" type="bool" label="ITV News Network" enable="eq(-23,true)|eq(-24,true)"/>
+        <setting id="Hare Krsna Content Broadcast" type="bool" label="Hare Krsna Content Broadcast" enable="eq(-24,true)|eq(-25,true)"/>
+        <setting id="MH One TV Network" type="bool" label="MH One TV Network" enable="eq(-25,true)|eq(-26,true)"/>
+        <setting id="News Nation Network" type="bool" label="News Nation Network" enable="eq(-26,true)|eq(-27,true)"/>
+        <setting id="SAB Network" type="bool" label="SAB Network" enable="eq(-27,true)|eq(-28,true)"/>
+        <setting id="Kalaignar TV Pvt Ltd" type="bool" label="Kalaignar TV Pvt Ltd" enable="eq(-28,true)|eq(-29,true)"/>
+        <setting id="Sidharth TV Network" type="bool" label="Sidharth TV Network" enable="eq(-29,true)|eq(-30,true)"/>
+        <setting id="Insight Media City" type="bool" label="Insight Media City" enable="eq(-30,true)|eq(-31,true)"/>
+        <setting id="Fashion India" type="bool" label="Fashion India" enable="eq(-31,true)|eq(-32,true)"/>
+        <setting id="Brave TV" type="bool" label="Brave TV" enable="eq(-32,true)|eq(-33,true)"/>
+        <setting id="Narikaa Digital" type="bool" label="Narikaa Digital" enable="eq(-33,true)|eq(-34,true)"/>
+        <setting id="Red Bull Media" type="bool" label="Red Bull Media" enable="eq(-34,true)|eq(-35,true)"/>
+        <setting id="RS Bharat" type="bool" label="RS Bharat" enable="eq(-35,true)|eq(-36,true)"/>
+        <setting id="NH Studioz" type="bool" label="NH Studioz" enable="eq(-36,true)|eq(-37,true)"/>
+        <setting id="INH News Janta TV" type="bool" label="INH News Janta TV" enable="eq(-37,true)|eq(-38,true)"/>
+        <setting id="Channel Divya" type="bool" label="Channel Divya" enable="eq(-38,true)|eq(-39,true)"/>
+        <setting id="Pitaara TV" type="bool" label="Pitaara TV" enable="eq(-39,true)|eq(-40,true)"/>
+        <setting id="Coke Studio India" type="bool" label="Coke Studio India" enable="eq(-40,true)|eq(-41,true)"/>
+        <setting id="Jaya TV Network" type="bool" label="Jaya TV Network" enable="eq(-41,true)|eq(-42,true)"/>
+        <setting id="Independent News Service" type="bool" label="Independent News Service" enable="eq(-42,true)|eq(-43,true)"/>
+        <setting id="Janam Multimedia" type="bool" label="Janam Multimedia" enable="eq(-43,true)|eq(-44,true)"/>
+        <setting id="Navsarjan Sanskruti" type="bool" label="Navsarjan Sanskruti" enable="eq(-44,true)|eq(-45,true)"/>
+        <setting id="Bollywood Masala" type="bool" label="Bollywood Masala" enable="eq(-45,true)|eq(-46,true)"/>
+        <setting id="Bharat Nation" type="bool" label="Bharat Nation" enable="eq(-46,true)|eq(-47,true)"/>
+        <setting id="India Superfast" type="bool" label="India Superfast" enable="eq(-47,true)|eq(-48,true)"/>
+        <setting id="Malayala Manorama" type="bool" label="Malayala Manorama" enable="eq(-48,true)|eq(-49,true)"/>
+        <setting id="NK Media Ventures" type="bool" label="NK Media Ventures" enable="eq(-49,true)|eq(-50,true)"/>
+        <setting id="Other Broadcasters" type="bool" label="Other Broadcasters" enable="eq(-50,true)|eq(-51,true)"/>
+    </category>
+    <category label="Account">
+		<setting type="lsep" label="User Account Settings"/>
+        <setting id="mobile" type="text" label="Mobile Number :" default="" visible="eq(4,false)" enable="eq(4,false)"/>
+        <setting id="lstatus" type="text" label="Status :" enable="false"/>
+        <setting id="astatus" type="text" enable="false" visible="eq(2,true)"/>
+        <setting id="estatus" type="text" enable="false" visible="eq(1,true)"/>
+        <setting id="isloggedin" type="bool" label="Is Logged In" visible="false"/>
+        <setting id="login" type="action" label="Log In" action="RunPlugin(plugin://plugin.video.jiotv/resources/lib/main/login/)" option="close" visible="eq(-1,false)"/>
+        <setting id="logout" type="action" label="Log Out" action="RunPlugin(plugin://plugin.video.jiotv/resources/lib/main/logout/)" option="close" visible="eq(-2,true)"/>
+        <setting id="tokreftime" type="text" enable="false" visible="eq(-3,true)"/>
+        <setting id="exptime" type="text" visible="false"/>
+    </category>
+</settings>
